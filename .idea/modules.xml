@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CS-151.iml" filepath="$PROJECT_DIR$/CS-151.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hw1/Hw1.iml" filepath="$PROJECT_DIR$/Hw1/Hw1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hw2/Hw2.iml" filepath="$PROJECT_DIR$/Hw2/Hw2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hw3/Hw3.iml" filepath="$PROJECT_DIR$/Hw3/Hw3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hw4/Hw4.iml" filepath="$PROJECT_DIR$/Hw4/Hw4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hw5/Hw5.iml" filepath="$PROJECT_DIR$/Hw5/Hw5.iml" />
+    </modules>
+  </component>
+</project>
