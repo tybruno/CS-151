@@ -1,0 +1,12 @@
+Your name: Tyler Bruno
+Your student ID: ************
+Your major: Software Engineering
+Your preferred email address: Tybruno117@gmail.com
+Check one: [X] Undergraduate, [ ] Graduate, [ ] Open university
+Repeating the class? [ ] Yes, [X] No
+Place and semester where you took a programming course in Java: Fall 2016 SJSU
+Course number and grade received:
+Place and semester where you took a course in data structures:
+Course number and grade received:
+Time it took you to answer the two questions below:
+Did you ask anyone for help? [ ] Yes, [ ] No
