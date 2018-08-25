@@ -1,12 +1,12 @@
 Your name: Tyler Bruno
-Your student ID: ************
+Your student ID: ************ Don't want to add SJSU number on public repo
 Your major: Software Engineering
 Your preferred email address: Tybruno117@gmail.com
 Check one: [X] Undergraduate, [ ] Graduate, [ ] Open university
 Repeating the class? [ ] Yes, [X] No
 Place and semester where you took a programming course in Java: Fall 2016 SJSU
-Course number and grade received:
-Place and semester where you took a course in data structures:
-Course number and grade received:
-Time it took you to answer the two questions below:
-Did you ask anyone for help? [ ] Yes, [ ] No
+Course number and grade received: B
+Place and semester where you took a course in data structures: Fall 2016 SJSU
+Course number and grade received: B
+Time it took you to answer the two questions below: 2 hours
+Did you ask anyone for help? [X] Yes, [ ] No.   Needed help with syn
