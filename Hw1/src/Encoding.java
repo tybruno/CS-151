@@ -11,6 +11,14 @@ public class Encoding {
     public static void print(String x) {
         System.out.print(x);
     }
+    public static void addCode(Set<String> result, int dots, int dashes, String value)
+    {
+        for(String v: morseCodes(dots,dashes))
+        {
+            result.add(v + value);
+        }
+    }
+
 
 
     public static Set<String> morseCodes(int dots, int dashes) {
@@ -32,34 +40,24 @@ public class Encoding {
         else if (dashes == 0)
         {
             //loop through every value in the result string from morseCodes
-            for (String value : morseCodes(dots - 1, dashes))
-            {
-//                System.out.println(dots);
-//                System.out.println(dashes);
-                result.add(value + '.');
-            }
+
+            addCode(result,dots-1,dashes,".");
         }
         else if (dots == 0)
         {
             //loop through every value in the result string from morseCodes
-            for (String value : morseCodes(dots, dashes - 1))
-            {
-                result.add(value + '-');
-            }
+            addCode(result,dots,dashes-1,"-");
+
         }
 
         else
             {
                 //loop through every value in the result string from morseCodes
-            for (String value : morseCodes(dots, dashes - 1))
-            {
-                result.add(value + "-");
-            }
+                addCode(result,dots,dashes  -1, "-");
+
                 //loop through every value in the result string from morseCodes
-            for (String value : morseCodes(dots - 1, dashes))
-            {
-                result.add(value + ".");
-            }
+                addCode(result,dots-1,dashes,".");
+
         }
         //return the result string treeset
         return result;
