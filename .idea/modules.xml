@@ -3,11 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CS-151.iml" filepath="$PROJECT_DIR$/CS-151.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hw1/Hw1.iml" filepath="$PROJECT_DIR$/Hw1/Hw1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hw2/Hw2.iml" filepath="$PROJECT_DIR$/Hw2/Hw2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hw3/Hw3.iml" filepath="$PROJECT_DIR$/Hw3/Hw3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hw4/Hw4.iml" filepath="$PROJECT_DIR$/Hw4/Hw4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hw5/Hw5.iml" filepath="$PROJECT_DIR$/Hw5/Hw5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw1/hw1.iml" filepath="$PROJECT_DIR$/hw1/hw1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw2/hw2.iml" filepath="$PROJECT_DIR$/hw2/hw2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw3/hw3.iml" filepath="$PROJECT_DIR$/hw3/hw3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw4/hw4.iml" filepath="$PROJECT_DIR$/hw4/hw4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw5/hw5.iml" filepath="$PROJECT_DIR$/hw5/hw5.iml" />
     </modules>
   </component>
 </project>
