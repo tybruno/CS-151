@@ -12,7 +12,11 @@ Use Case: Gas pump
 6. System tells user that they can remove nozzle and begin pumping gas
 7. User fills gas tank and returns nozzel when they are finished
 8. System prompts user if they would like a receipt
+    Press 1 to print recept
+    Press 2 to not print recept
 9. User selects option
+10. System prints
+    "Thank you! Transaction complete"
 
 Variation 1
 
@@ -27,3 +31,11 @@ Variation 2
 1.3 System prompts user to pay at the cashier
 1.4 User goes to the cashier
 1.5 continue with step 3
+
+Variation 3
+1.1 start at step 9
+1.2 User presses 1 to print recept
+1.3 Recept prints
+1.4 user grabs recept
+1.5 continue with step 10
+
