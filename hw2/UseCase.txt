@@ -1,0 +1,29 @@
+Use Case: Gas pump
+1. The pump station prompts user to enter payment method (Debit, Credit, Cash)
+    Press 1 to pay with debit/credit
+    Press 2 to pay with cash
+2. User selects payment method
+3. User pays with that payment method
+4. Pump prompts the user to enter gasoline grade (low grade, medium grade, high grade)
+    Press 1 for low grade
+    Press 2 for low grade
+    Press 3 for low grade
+5. User selects the gasoline grade
+6. System tells user that they can remove nozzle and begin pumping gas
+7. User fills gas tank and returns nozzel when they are finished
+8. System prompts user if they would like a receipt
+9. User selects option
+
+Variation 1
+
+1.1 Start at step 2
+1.2 user presses 1 to pay with debit/credit
+1.3 continue with step 3
+
+Variation 2
+
+1.1 Start at step 2
+1.2 user presses 2 to pay with cash
+1.3 System prompts user to pay at the cashier
+1.4 User goes to the cashier
+1.5 continue with step 3
