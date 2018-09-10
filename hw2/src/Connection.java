@@ -24,14 +24,14 @@ public class Connection {
      * @param key the phone key pressed by the user
      */
     public void dial(String key) {
-        if (state == CONNECTED)
+        if (state == CONNECTED) {
             try {
                 connect(key);
             } catch (NumberFormatException e) {
                 phone.speak("Invalid Entry. Try again.\n");
                 phone.speak(INITIAL_PROMPT);
             }
-
+        }
         else if (state == RECORDING)
             login(key);
         else if (state == CHANGE_PASSCODE)
@@ -212,10 +212,10 @@ public class Connection {
         }
     }
 
-    public Mailbox getCurrentMailbox() {
-        return currentMailbox;
-    }
-
+    /**
+     * Gets the current recording from the connection
+     * @return The current recording
+     */
     public String getCurrentRecording() {
         return currentRecording;
     }
