@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Connects a phone to the mail system. The purpose of this
  * class is to keep track of the state of a connection, since
@@ -23,7 +25,13 @@ public class Connection {
      */
     public void dial(String key) {
         if (state == CONNECTED)
-            connect(key);
+            try {
+                connect(key);
+            } catch (NumberFormatException e) {
+                phone.speak("Invalid Entry. Try again.\n");
+                phone.speak(INITIAL_PROMPT);
+            }
+
         else if (state == RECORDING)
             login(key);
         else if (state == CHANGE_PASSCODE)
@@ -72,11 +80,32 @@ public class Connection {
      * @param key the phone key pressed by the user
      */
     private void connect(String key) {
+
         if (key.equals("#")) {
             currentMailbox = system.findMailbox(accumulatedKeys);
             if (currentMailbox != null) {
-                state = RECORDING;
-                phone.speak(currentMailbox.getGreeting());
+                while (true) {
+                    phone.speak("To leave a message, press (1), to access your mailbox, press (2)");
+                    Scanner scanner = new Scanner(System.in);
+                    String input = scanner.next();
+
+
+                    if (input.equals("1")) {
+                        state = RECORDING;
+                        phone.speak(currentMailbox.getGreeting());
+                        break;
+                    } else if (input.equals("2")) {
+
+                        state = MAILBOX_MENU;
+                        phone.speak(MAILBOX_MENU_TEXT);
+                        break;
+                    } else {
+                        phone.speak(input + " is not a valid option, try again");
+
+                    }
+                }
+
+
             } else
                 phone.speak("Incorrect mailbox number. Try again!");
             accumulatedKeys = "";
@@ -90,12 +119,14 @@ public class Connection {
      * @param key the phone key pressed by the user
      */
     private void login(String key) {
+
+
         if (key.equals("#")) {
             if (currentMailbox.checkPasscode(accumulatedKeys)) {
                 state = MAILBOX_MENU;
                 phone.speak(MAILBOX_MENU_TEXT);
-            } else
-                phone.speak("Incorrect passcode. Try again!");
+            } //else
+//                phone.speak("Incorrect passcode. Try again!");
             accumulatedKeys = "";
         } else
             accumulatedKeys += key;
@@ -128,6 +159,7 @@ public class Connection {
             state = MAILBOX_MENU;
             phone.speak(MAILBOX_MENU_TEXT);
         }
+
     }
 
     /**
@@ -145,6 +177,9 @@ public class Connection {
         } else if (key.equals("3")) {
             state = CHANGE_GREETING;
             phone.speak("Record your greeting, then press the # key");
+        }
+        else{
+            phone.speak(MAILBOX_MENU_TEXT);
         }
     }
 
@@ -171,7 +206,20 @@ public class Connection {
             state = MAILBOX_MENU;
             phone.speak(MAILBOX_MENU_TEXT);
         }
+        else
+        {
+            phone.speak(MESSAGE_MENU_TEXT);
+        }
     }
+
+    public Mailbox getCurrentMailbox() {
+        return currentMailbox;
+    }
+
+    public String getCurrentRecording() {
+        return currentRecording;
+    }
+
 
     private MailSystem system;
     private Mailbox currentMailbox;
