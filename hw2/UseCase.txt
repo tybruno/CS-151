@@ -26,16 +26,16 @@ Variation 1
 
 Variation 2
 
-1.1 Start at step 2
-1.2 user presses 2 to pay with cash
-1.3 System prompts user to pay at the cashier
-1.4 User goes to the cashier
-1.5 continue with step 3
+2.1 Start at step 2
+2.2 user presses 2 to pay with cash
+2.3 System prompts user to pay at the cashier
+2.4 User goes to the cashier
+2.5 continue with step 3
 
 Variation 3
-1.1 start at step 9
-1.2 User presses 1 to print recept
-1.3 Recept prints
-1.4 user grabs recept
-1.5 continue with step 10
+3.1 start at step 9
+3.2 User presses 1 to print recept
+3.3 Recept prints
+3.4 user grabs recept
+3.5 continue with step 10
 
