@@ -71,15 +71,30 @@ public class Question3 {
         JFrame frame = new JFrame();
 
 
+        MarsIcon circle = new MarsIcon(20,"red");
+
+
+
+        final JLabel label = new JLabel(circle);
+
+        frame.setLayout(new FlowLayout());
+        frame.add(label);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+
         //Construct components
         JButton red = new JButton("Red");
         JButton blue = new JButton("Blue");
         JButton green = new JButton("Green");
 
-        CircleIcon circle = new CircleIcon(50);
 
 
-//        red.addActionListener(event -> circle.paintIcon());
+        //Button listener
+        blue.addActionListener(event -> {circle.changeClr("blue");label.repaint();});
+        red.addActionListener(event -> {circle.changeClr("red");label.repaint();});
+        green.addActionListener(event -> {circle.changeClr("green");label.repaint();});
 
         //Set frame layout
         frame.setLayout(new FlowLayout());
