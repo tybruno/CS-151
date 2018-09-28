@@ -1,3 +1,8 @@
+/**
+ * Quistion 2 Prompt:
+ * Write a class BankAccount that implements the Comparable interface type. Order bank accounts
+ * by increasing balance. Supply a test program that sorts an array list of bank accounts
+ */
 public class BankAccount implements Comparable<BankAccount> {
     private double balance;
 

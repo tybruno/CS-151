@@ -1,6 +1,11 @@
 
 import java.util.TreeSet;
 
+/**
+ * Quistion 2 Prompt:
+ * Write a class BankAccount that implements the Comparable interface type. Order bank accounts
+ * by increasing balance. Supply a test program that sorts an array list of bank accounts
+ */
 public class BankAccountTester {
 
     /**
