@@ -58,20 +58,31 @@ public class Invoice
 
                     public void remove()
                     {
-                        throw new UnsupportedOperationException();
+                        items.remove(current--);
+//                        throw new UnsupportedOperationException();
                     }
 
-                    private int current = 0;
+
+                    public int current = 0;
                 };
     }
 
     public String format(InvoiceFormatter formatter)
     {
-        String r = formatter.formatHeader();
+        String header = formatter.formatHeader();
         Iterator<LineItem> iter = getItems();
+
+        String r = "";
+//        System.out.println(items);
         while (iter.hasNext())
-            r += formatter.formatLineItem(iter.next());
-        return r + formatter.formatFooter();
+            //This seems to iterate more then it should
+
+//            System.out.println(formatter.formatLineItem(iter.next()));
+            r = formatter.formatLineItem(iter.next());
+
+        String footer = formatter.formatFooter();
+
+        return header + r + footer;
     }
 
     private ArrayList<LineItem> items;
