@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  This interface describes the tasks that an invoice
  formatter needs to carry out.
@@ -21,4 +23,6 @@ public interface InvoiceFormatter
      @return the invoice footer
      */
     String formatFooter();
+
+    String format(ArrayList<LineItem> items);
 }

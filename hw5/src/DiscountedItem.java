@@ -24,6 +24,9 @@ public class DiscountedItem implements LineItem
         return item.toString() + " (Discount " + discount
                 + "%)";
     }
+    public String itemType(){
+        return "Discount";
+    }
 
     private LineItem item;
     private double discount;

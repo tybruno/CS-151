@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  A bundle of line items that is again a line item.
@@ -23,6 +23,10 @@ public class Bundle implements LineItem
         for (LineItem item : items)
             price += item.getPrice();
         return price;
+    }
+
+    public String itemType(){
+        return "Bundle";
     }
 
     public String toString()

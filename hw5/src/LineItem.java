@@ -13,4 +13,6 @@ public interface LineItem
      @return the description
      */
     String toString();
+
+    String itemType();
 }
