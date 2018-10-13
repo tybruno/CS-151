@@ -5,36 +5,36 @@ import java.util.ArrayList;
 
 public class Question1
 {
-    public static void frame1() {
-        JFrame frame = new JFrame();
-        frame.setLayout(new FormLayout());
-
-        final int FIELD_WIDTH = 5;
-        JTextField textField = new JTextField(FIELD_WIDTH);
-        JTextField textField2 = new JTextField(FIELD_WIDTH);
-        JTextField textField3 = new JTextField(FIELD_WIDTH);
-
-
-        frame.add(new JLabel("Number 1"));
-        frame.add(textField);
-        frame.add(new JLabel("Number 2"));
-        frame.add(textField2);
-        frame.add(new JLabel("Number 3"));
-        frame.add(textField3);
-        frame.pack();
-
-        ArrayList<Double> values = new ArrayList<>();
-
-        values.add((Double.parseDouble(textField.getText())));
-
-        textField.addActionListener(event -> {paint(values;});
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        frame.pack();
-        frame.setVisible(true);
-
-
-    }
+//    public static void frame1() {
+//        JFrame frame = new JFrame();
+//        frame.setLayout(new FormLayout());
+//
+//        final int FIELD_WIDTH = 5;
+//        JTextField textField = new JTextField(FIELD_WIDTH);
+//        JTextField textField2 = new JTextField(FIELD_WIDTH);
+//        JTextField textField3 = new JTextField(FIELD_WIDTH);
+//
+//
+//        frame.add(new JLabel("Number 1"));
+//        frame.add(textField);
+//        frame.add(new JLabel("Number 2"));
+//        frame.add(textField2);
+//        frame.add(new JLabel("Number 3"));
+//        frame.add(textField3);
+//        frame.pack();
+//
+//        ArrayList<Double> values = new ArrayList<>();
+//
+//        values.add((Double.parseDouble(textField.getText())));
+//
+//        textField.addActionListener(event -> {;});
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//        frame.pack();
+//        frame.setVisible(true);
+//
+//
+//    }
 
     public static void frame2(){
         JFrame frame = new JFrame();
@@ -44,7 +44,7 @@ public class Question1
 
     }
 
-    public static void paint(ArrayList<Double> values, Component c, Graphics g, int x, int y){
+    public static void paint(ArrayList<Double> values, Graphics g){
 
         int icon_height = 150;
         int icon_width = 150;
@@ -76,8 +76,54 @@ public class Question1
         return maxValue;
     }
     public static void main(String args[]) {
-        JFrame frame2 = new JFrame();
-        frame1();
+        JFrame frame = new JFrame();
+        ArrayList<Double> list = new ArrayList<>();
+        list.add(0.0);
+        list.add(0.0);
+        list.add(0.0);
+        BarFrame barFrame = new BarFrame(list);
+        frame.setLayout(new FormLayout());
+
+        final int FIELD_WIDTH = 5;
+
+        JTextField textField = new JTextField(FIELD_WIDTH);
+        JTextField textField2 = new JTextField(FIELD_WIDTH);
+        JTextField textField3 = new JTextField(FIELD_WIDTH);
+
+
+        frame.add(new JLabel("Number 1"));
+        frame.add(textField);
+        frame.add(new JLabel("Number 2"));
+        frame.add(textField2);
+        frame.add(new JLabel("Number 3"));
+        frame.add(textField3);
+        frame.pack();
+        try {
+            textField.addActionListener(event -> {
+                barFrame.modifyData(0, Double.parseDouble(textField.getText()));
+                barFrame.repaint();
+            });
+            textField2.addActionListener(event -> {
+                barFrame.modifyData(1, Double.parseDouble(textField2.getText()));
+                barFrame.repaint();
+            });
+            textField3.addActionListener(event -> {
+                barFrame.modifyData(2, Double.parseDouble(textField3.getText()));
+                barFrame.repaint();
+            });
+        }
+        catch (java.lang.NumberFormatException e){
+            System.out.println("Field is empty: " + e);
+        }
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.pack();
+        frame.setVisible(true);
+
+
+
 
     }
 }
