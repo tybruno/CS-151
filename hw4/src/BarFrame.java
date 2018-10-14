@@ -13,15 +13,17 @@ public class BarFrame extends JFrame implements ChangeListener {
         final int ICON_HEIGHT = 150;
         this.data = data;
 
-        setLayout(new BorderLayout());
         setLocation(0, 100);
+
+        setLayout(new BorderLayout());
         Icon bar = new Icon() {
             @Override
             public void paintIcon(Component c, Graphics g, int x, int y) {
                 Graphics2D g2 = (Graphics2D) g;
                 g2.setColor(Color.blue);
-                double maxValue = findMaxValueInArrayList(data);
                 double barHeight = getIconHeight() / (double) data.size();
+
+                double maxValue = findMaxValueInArrayList(data);
 
                 int i = 0;
                 for(Double value: data){
@@ -53,8 +55,9 @@ public class BarFrame extends JFrame implements ChangeListener {
                 return ICON_HEIGHT;
             }
         };
-        add(new JLabel(bar));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        add(new JLabel(bar));
+
         pack();
         setVisible(true);
 
@@ -63,9 +66,8 @@ public class BarFrame extends JFrame implements ChangeListener {
         repaint();
     }
     public void modifyData(int index, double newData){
-        System.out.println(data);
+
         data.set(index, newData);
-        System.out.println(data);
 
     }
 
