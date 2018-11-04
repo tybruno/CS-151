@@ -1,0 +1,68 @@
+Tyler Bruno 
+
+1. What Happens? why?:
+on line 7 in Prog1 we have Person cloneOfFred = fred.clone();
+fred.clone() throws a compile time error.It states that "'clone()' has protected access in java.lang.object"
+This is caused because the clone() method in the Person class is inherited as private. We must change it to public.
+
+2.What happens when you compile? Why?:
+The error in prog1 disappears but now in Person at line 20 we get the folowing error:
+Error:(20, 56) java: unreported exception java.lang.CloneNotSupportedException; must be caught or declared to be thrown"
+This happens because the exception was never caught or thrown.
+
+3.Run the program. You should get an exception. Why?:
+I get the following error because we have the clone() method throw CloneNotSupportedException:
+
+Exception in thread "main" java.lang.CloneNotSupportedException: Person
+	at java.base/java.lang.Object.clone(Native Method)
+	at Person.clone(Person.java:21)
+	at Prog1.main(Prog1.java:7)
+
+4.What friends does cloneOfFred have? Why?:
+Fred has the friend Barney. This happens because cloneOfFriend is pointing to the original fred in Memory, which is why we get original freds friend.
+This clone is considered a shallow copy.
+
+5. Make it so that cloneOfFred has its own list of friends, by cloning the original list. How did you do that? Run the program again and verify that the program has been fixed.
+    public Person clone() throws CloneNotSupportedException  {
+
+        Person clone = new Person(this.name);
+        for(Person friend: friends){
+            clone.befriend(friend);
+        }
+        return clone;
+    }
+
+I get the result Fred, friends =     because clonedFriend doesn't have any friends.
+
+6.Run the program. What happens? Why?:
+Basically the same thing I had before. So it acted the same.
+
+7.Which objects are contained in people.ser? Why?:
+I have a weird encoding for people.ser. Idk why:
+�� {sr  java.io.NotSerializableException(Vx �5  xr java.io.ObjectStreamExceptiond��k�9��  xr java.io.IOExceptionl�sde%�  xr java.lang.Exception��>;�  xr java.lang.Throwable��5'9w�� L causet Ljava/lang/Throwable;L
+detailMessaget Ljava/lang/String;[
+stackTracet [Ljava/lang/StackTraceElement;L suppressedExceptionst Ljava/util/List;xpq ~ 	t Personur [Ljava.lang.StackTraceElement;F*<<�"9  xp   sr java.lang.StackTraceElementa	Ś&6݅ B formatI
+lineNumberL classLoaderNameq ~ L declaringClassq ~ L fileNameq ~ L
+methodNameq ~ L
+moduleNameq ~ L
+moduleVersionq ~ xp  �pt java.io.ObjectOutputStreamt ObjectOutputStream.javat writeObject0t 	java.baset 9.0.4sq ~
+  ]pq ~ q ~ t writeObjectq ~ q ~ sq ~
+
+t appt Prog2t
+Prog2.javat mainppsr java.util.Collections$EmptyListz��<���  xpx
+
+
+8.Run the program. What happens? Why?
+A picture of fred appears. After clicking "ok" butto I get the following error:
+Exception in thread "main" java.io.NotSerializableException: Person
+	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1185)
+	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
+	at Prog2.main(Prog2.java:18)
+
+I think this error is caused because it is trying to write an image to a file type that does not allow images.
+
+9.Add p.show() to the end. Why doesn't the image show?
+The image doesn't show because object p has no image to show. The way to fix it is add an image to the constructor when creating the object.
+
+
+

@@ -7,7 +7,9 @@ public class Prog2
 {
     public static void main(String[] args) throws Exception
     {
-        Person fred = new Person("Fred");
+        Person fred = new Person("Fred", "https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/Fred_Flintstone.png/165px-Fred_Flintstone.png");
+        fred.show();
+//        Person fred = new Person("Fred");
         Person barney = new Person("Barney");
         fred.befriend(barney);
         barney.befriend(fred);
@@ -23,5 +25,6 @@ public class Prog2
         Person p = (Person) in.readObject();
         System.out.println(p);
         System.out.println(p.getFriend(0));
+//        p.show();
     }
 }

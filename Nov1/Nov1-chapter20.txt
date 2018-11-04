@@ -1,0 +1,39 @@
+Tyler Bruno 
+
+1.What does it print?
+100
+
+2. How many different (i.e. not equal to another) Point2 objects are inserted in the set?
+
+All the variations were duplicated 24 times.
+i.e. 
+x=0, y=0
+x=0,y=1
+x=1,y=0
+x=1,y=1
+24
+
+3.Explain why you are getting the wrong answer. (And don't just say "because we didn't implement the ... method".):
+We are getting the wrong answer because we did not implement the compareTO and equals method. When the values are being added to the hashset they are being shallow compared. we have to create the equals and compare to method so that the valaue's x and y will be checked with the other objects in the hashset.
+4.Change n to 1000 and run the program again. Why does it seem to hang?:
+It is hanging because it has to loop n^2 timmes. so 1000^2 which takes time to complete.
+
+5. Fix Point2 to works correctly. Insert objects into the hash set as before. What count do you now get?
+I should get the count of 4.
+
+6.What do you get? Why?
+Because it is shallow checking if they are equal. It needs to be a deep check.
+
+7. How do you fix that?
+Correctly implement equals and compareTo method in LabeledPOint (see code)
+
+8.What do you get? Why?. I get the following error because we are trying to see if LabeledPoint object is equal to point object. These classes have not been set up to compare between each other.
+Exception in thread "main" java.lang.ClassCastException: Point cannot be cast to LabeledPoint
+	at LabeledPoint.equals(LabeledPoint.java:6)
+	at Prog3.main(Prog3.java:11)
+
+9.How can you fix it so that equals is symmetrical?:
+Since LabeledPoint inherits Point, I just had to make a few small changes in point to get it to work. see code for more details.
+
+10.Is your fix transitive?: 
+Yes it is
